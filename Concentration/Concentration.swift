@@ -14,17 +14,7 @@ struct Concentration {
     
     private var indexOfOneAndOnlyFacedUpCard: Int? {
         get {
-            var foundIndex: Int?
-            for index in cards.indices {
-                if cards[index].isFacedUp {
-                    if foundIndex == nil {
-                        foundIndex = index
-                    } else {
-                        return nil
-                    }
-                }
-            }
-            return foundIndex
+            return cards.indices.filter{ cards[$0].isFacedUp }.oneAndOnly
         }
         set (newValue) {
             for index in cards.indices {
@@ -37,7 +27,7 @@ struct Concentration {
         assert(cards.indices.contains(index), "Concentration.chooseCard(at:\(index)): chosen index not in the range.")
         if !cards[index].isMatched {
             if let matchIndex = indexOfOneAndOnlyFacedUpCard, matchIndex != index {
-                if cards[matchIndex].identifier == cards[index].identifier {
+                if cards[matchIndex] == cards[index] {
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
                 }
@@ -55,5 +45,11 @@ struct Concentration {
             cards += [card, card]
         }
         cards.shuffle()
+    }
+}
+
+extension Collection {
+    var oneAndOnly: Element? {
+        return count == 1 ? first : nil
     }
 }
