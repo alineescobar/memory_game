@@ -9,6 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    @IBAction func newGameButton(_ sender: Any) {
+        initiateGame()
+    }
+    
     private lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
     
     var numberOfPairsOfCards: Int {
@@ -43,9 +49,10 @@ class ViewController: UIViewController {
         let cardNumber = cardButtons.firstIndex(of: sender)!
         game.chooseCard(at: cardNumber)
         updateViewFromTheModel()
+        print(cardNumber)
     }
     
-    private func updateViewFromTheModel() {
+    func updateViewFromTheModel() {
         for index in cardButtons.indices{
             let button = cardButtons[index]
             let card = game.cards[index]
@@ -59,17 +66,35 @@ class ViewController: UIViewController {
             }
         }
     }
-
-    private var emojiChoices = "🦇👻🎃😱😈☠️🧛🏽🕷🍭"
+    
+//    private var animalsEmojis = "🐈🐓🐕🐋🐞🦋🦚🦥"
+//    private var electronicEmojis = "💻📱🎮📷📡🎧💾📼"
+//    private var flagEmojis = "🇧🇷🇩🇪🇫🇷🇳🇬🇮🇹🇦🇴🇵🇭🇲🇾"
+//    private var foodEmoji = "🍣🍔🥨☕🍺🍩🍱🍕"
+//    private var halloweenEmojis = "🕸️🕷️👻🎃☠️🧛🏽🦇🧙🏾"
+//    private var natureEmojis = "🌴🌸🍁☀️🌑🌈🌧️🌿"
+//    private var sportsEmojis = "🏀⚽🏊🏾🎾🏉⚾🏄🏾‍♀️🚴🏾‍♀️"
+   
+    private var defaultEmojis = "🕸️🕷️👻🎃☠️🧛🏽🦇🧙🏾"
     
     private var emoji = [Card:String]()
     
     private func emoji(for card: Card) -> String {
-        if emoji[card] == nil, emojiChoices.count > 0 {
-            let randomStringIndex = emojiChoices.index(emojiChoices.startIndex, offsetBy: emojiChoices.count.arc4random)
-            emoji[card] = String(emojiChoices.remove(at: randomStringIndex))
+        if emoji[card] == nil, defaultEmojis.count > 0 {
+            let randomStringIndex = defaultEmojis.index(defaultEmojis.startIndex, offsetBy: defaultEmojis.count.arc4random)
+            emoji[card] = String(defaultEmojis.remove(at: randomStringIndex))
         }
             return emoji[card] ?? "?"
+    }
+    
+    func initiateGame() {
+        game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
+        updateViewFromTheModel()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        initiateGame()
     }
 }
 
