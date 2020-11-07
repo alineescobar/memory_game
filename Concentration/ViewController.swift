@@ -44,6 +44,8 @@ class ViewController: UIViewController {
     
     @IBOutlet private var cardButtons: [UIButton]!
     
+    
+    
     @IBAction private func touchCard(_ sender: UIButton) {
         flipCount += 1
         let cardNumber = cardButtons.firstIndex(of: sender)!
@@ -89,7 +91,9 @@ class ViewController: UIViewController {
     
     func initiateGame() {
         game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
+        defaultEmojis = "🕸️🕷️👻🎃☠️🧛🏽🦇🧙🏾"
         updateViewFromTheModel()
+        
     }
     
     override func viewDidLoad() {
