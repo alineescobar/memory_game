@@ -178,49 +178,70 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdX-IO-dLo">
-                                <rect key="frame" x="44" y="420" width="67" height="30"/>
+                                <rect key="frame" x="44" y="469" width="67" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <state key="normal" title="Animals"/>
+                                <connections>
+                                    <action selector="selecTheme:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bbx-Ih-D1T"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ZV-K6-BP7">
-                                <rect key="frame" x="117" y="420" width="79" height="30"/>
+                                <rect key="frame" x="117" y="469" width="79" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <state key="normal" title="Halloween"/>
+                                <connections>
+                                    <action selector="selecTheme:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bdp-i7-0fa"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xu7-Na-btI">
-                                <rect key="frame" x="204" y="420" width="79" height="30"/>
+                                <rect key="frame" x="204" y="469" width="79" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <state key="normal" title="Sports"/>
+                                <connections>
+                                    <action selector="selecTheme:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JDn-zo-KAO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPN-gz-Wfu">
-                                <rect key="frame" x="291" y="420" width="79" height="30"/>
+                                <rect key="frame" x="291" y="469" width="79" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <state key="normal" title="Nature"/>
+                                <connections>
+                                    <action selector="selecTheme:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QW7-B0-a52"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0x4-re-mKO">
-                                <rect key="frame" x="78" y="458" width="57" height="30"/>
+                                <rect key="frame" x="78" y="507" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <state key="normal" title="Flags"/>
+                                <connections>
+                                    <action selector="selecTheme:" destination="BYZ-38-t0r" eventType="touchUpInside" id="22t-5l-UgE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YlY-JY-hEO">
-                                <rect key="frame" x="244" y="458" width="57" height="30"/>
+                                <rect key="frame" x="244" y="507" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <state key="normal" title="Food"/>
+                                <connections>
+                                    <action selector="selecTheme:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qZU-xo-u8a"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujk-1H-Xuh">
-                                <rect key="frame" x="143" y="458" width="93" height="30"/>
+                                <rect key="frame" x="143" y="507" width="93" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <state key="normal" title="Electronics"/>
+                                <connections>
+                                    <action selector="selecTheme:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eBD-Pt-Y7j"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIu-EX-WVr">
-                                <rect key="frame" x="161" y="388" width="75" height="30"/>
+                                <rect key="frame" x="161" y="437" width="75" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="New Game"/>
                                 <connections>
@@ -256,6 +277,13 @@
                         <outletCollection property="cardButtons" destination="FS7-yN-2Tc" collectionClass="NSMutableArray" id="wkT-ZD-xS6"/>
                         <outletCollection property="cardButtons" destination="zRv-oE-Ogp" collectionClass="NSMutableArray" id="Fyl-kw-QUO"/>
                         <outletCollection property="cardButtons" destination="ePi-Bw-2Sm" collectionClass="NSMutableArray" id="oJE-xa-GaA"/>
+                        <outletCollection property="themeButtons" destination="ZdX-IO-dLo" collectionClass="NSMutableArray" id="Mv4-4a-w2s"/>
+                        <outletCollection property="themeButtons" destination="5ZV-K6-BP7" collectionClass="NSMutableArray" id="0Hr-BM-g3E"/>
+                        <outletCollection property="themeButtons" destination="xu7-Na-btI" collectionClass="NSMutableArray" id="tu7-Kt-720"/>
+                        <outletCollection property="themeButtons" destination="nPN-gz-Wfu" collectionClass="NSMutableArray" id="uKg-vQ-5ai"/>
+                        <outletCollection property="themeButtons" destination="0x4-re-mKO" collectionClass="NSMutableArray" id="vIG-jg-eiA"/>
+                        <outletCollection property="themeButtons" destination="ujk-1H-Xuh" collectionClass="NSMutableArray" id="rw3-3i-NQ5"/>
+                        <outletCollection property="themeButtons" destination="YlY-JY-hEO" collectionClass="NSMutableArray" id="nzv-kS-hm7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

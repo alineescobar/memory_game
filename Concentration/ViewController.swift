@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
     @IBAction func newGameButton(_ sender: Any) {
         initiateGame()
     }
@@ -44,14 +43,11 @@ class ViewController: UIViewController {
     
     @IBOutlet private var cardButtons: [UIButton]!
     
-    
-    
     @IBAction private func touchCard(_ sender: UIButton) {
         flipCount += 1
         let cardNumber = cardButtons.firstIndex(of: sender)!
         game.chooseCard(at: cardNumber)
         updateViewFromTheModel()
-        print(cardNumber)
     }
     
     func updateViewFromTheModel() {
@@ -69,16 +65,26 @@ class ViewController: UIViewController {
         }
     }
     
-//    private var animalsEmojis = "🐈🐓🐕🐋🐞🦋🦚🦥"
-//    private var electronicEmojis = "💻📱🎮📷📡🎧💾📼"
-//    private var flagEmojis = "🇧🇷🇩🇪🇫🇷🇳🇬🇮🇹🇦🇴🇵🇭🇲🇾"
-//    private var foodEmoji = "🍣🍔🥨☕🍺🍩🍱🍕"
-//    private var halloweenEmojis = "🕸️🕷️👻🎃☠️🧛🏽🦇🧙🏾"
-//    private var natureEmojis = "🌴🌸🍁☀️🌑🌈🌧️🌿"
-//    private var sportsEmojis = "🏀⚽🏊🏾🎾🏉⚾🏄🏾‍♀️🚴🏾‍♀️"
-   
-    private var defaultEmojis = "🕸️🕷️👻🎃☠️🧛🏽🦇🧙🏾"
+    var animalsEmojis = "🐈🐓🐕🐋🐞🦋🦚🦥"
+    var electronicEmojis = "💻📱🎮📷📡🎧💾📼"
+    var flagEmojis = "🇧🇷🇩🇪🇫🇷🇳🇬🇮🇹🇦🇴🇵🇭🇲🇾"
+    var foodEmoji = "🍣🍔🥨☕🍺🍩🍱🍕"
+    var halloweenEmojis = "🕸️🕷️👻🎃☠️🧛🏽🦇🧙🏾"
+    var natureEmojis = "🌴🌸🍁☀️🌑🌈🌧️🌿"
+    var sportsEmojis = "🏀⚽🏊🏾🎾🏉⚾🏄🏾‍♀️🚴🏾‍♀️"
     
+    lazy var themes = [animalsEmojis, halloweenEmojis, sportsEmojis, natureEmojis, flagEmojis, electronicEmojis, foodEmoji]
+    
+    private var defaultEmojis = "🕸️🕷️👻🎃☠️🧛🏽🦇🧙🏾"
+
+    @IBOutlet var themeButtons: [UIButton]!
+    
+    @IBAction func selecTheme(_ sender: UIButton) {
+        let theme = themeButtons.firstIndex(of: sender)!
+        game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
+        defaultEmojis = themes[theme]
+        updateViewFromTheModel()
+    }
     private var emoji = [Card:String]()
     
     private func emoji(for card: Card) -> String {
@@ -91,7 +97,7 @@ class ViewController: UIViewController {
     
     func initiateGame() {
         game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
-        defaultEmojis = "🕸️🕷️👻🎃☠️🧛🏽🦇🧙🏾"
+        defaultEmojis = halloweenEmojis
         updateViewFromTheModel()
         
     }
