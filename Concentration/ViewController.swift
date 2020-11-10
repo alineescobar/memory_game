@@ -26,6 +26,12 @@ class ViewController: UIViewController {
         }
     }
     
+    private(set) var scoreCount: Int = 0 {
+        didSet {
+            updateScoreLabel()
+        }
+    }
+    
     private func updateFlipCountLabel() {
         let attributes: [NSAttributedString.Key: Any] = [
             .strokeWidth: 5.0,
@@ -35,9 +41,24 @@ class ViewController: UIViewController {
         flipCountLabel.attributedText = attribuitedString
     }
     
+    private func updateScoreLabel() {
+        let attributes: [NSAttributedString.Key: Any] = [
+            .strokeWidth: 5.0,
+            .strokeColor: #colorLiteral(red: 0.3176470697, green: 0.07450980693, blue: 0.02745098062, alpha: 1)
+        ]
+        let attribuitedString = NSAttributedString(string: "Score: \(scoreCount)", attributes: attributes)
+        scoreLabel.attributedText = attribuitedString
+    }
+    
     @IBOutlet private weak var flipCountLabel: UILabel! {
         didSet {
             updateFlipCountLabel()
+        }
+    }
+    
+    @IBOutlet private weak var scoreLabel: UILabel! {
+        didSet {
+            updateScoreLabel()
         }
     }
     
@@ -58,6 +79,11 @@ class ViewController: UIViewController {
             if card.isFacedUp {
                 button.setTitle(emoji (for: card), for: UIControl.State.normal)
                 button.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                
+                if card.isMatched {
+                    scoreCount+=1
+                }
+                
             } else {
                 button.setTitle("", for: UIControl.State.normal)
                 button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0) : #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
@@ -99,7 +125,6 @@ class ViewController: UIViewController {
         game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
         defaultEmojis = halloweenEmojis
         updateViewFromTheModel()
-        
     }
     
     override func viewDidLoad() {

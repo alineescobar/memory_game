@@ -248,6 +248,13 @@
                                     <action selector="newGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HRB-Fl-lPI"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cia-aE-kOf">
+                                <rect key="frame" x="134" y="638" width="129" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -261,6 +268,7 @@
                     </view>
                     <connections>
                         <outlet property="flipCountLabel" destination="XaK-S1-f3u" id="wJ1-cx-wNo"/>
+                        <outlet property="scoreLabel" destination="cia-aE-kOf" id="Oim-r3-8D4"/>
                         <outletCollection property="cardButtons" destination="dcN-W9-qdZ" collectionClass="NSMutableArray" id="hJG-Gq-ovj"/>
                         <outletCollection property="cardButtons" destination="mi2-F8-uZ4" collectionClass="NSMutableArray" id="Aji-Bo-LUF"/>
                         <outletCollection property="cardButtons" destination="JCe-3Z-yE4" collectionClass="NSMutableArray" id="heL-G2-H1p"/>
