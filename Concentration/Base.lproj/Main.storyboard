@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cCv-3w-i8Y">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -10,22 +10,82 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Concentration Theme Choose View Controller-->
+        <scene sceneID="9aG-L8-QfK">
+            <objects>
+                <viewController id="GAH-yk-Wsw" customClass="ConcentrationThemeChooseViewController" customModule="Concentration" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pWc-C2-qwh" customClass="I">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="shc-8B-SOJ">
+                                <rect key="frame" x="139" y="270" width="188" height="196"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Grr-ST-By9">
+                                        <rect key="frame" x="25.666666666666657" y="0.0" width="137" height="60"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="Animals">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="Choose Theme" id="3RV-Ia-nce"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nh-KP-fxZ">
+                                        <rect key="frame" x="0.0" y="68" width="188" height="60"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="Electronics">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="Choose Theme" id="bR4-QK-ZwD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6HH-Tm-1b4">
+                                        <rect key="frame" x="48" y="136" width="92" height="60"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="Flags">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="Choose Theme" id="13D-M9-fzA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aff-mI-fKr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Grr-ST-By9" firstAttribute="centerY" secondItem="aff-mI-fKr" secondAttribute="centerY" id="2Lt-iQ-U5a"/>
+                            <constraint firstItem="Grr-ST-By9" firstAttribute="centerX" secondItem="aff-mI-fKr" secondAttribute="centerX" id="z5P-9N-KGo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wt2-vY-xaZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bfJ-i0-KJl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-686.95652173913049" y="14.673913043478262"/>
+        </scene>
+        <!--Concentration View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Concentration" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ConcentrationViewController" customModule="Concentration" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flips: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaK-S1-f3u">
-                                <rect key="frame" x="160.66666666666666" y="680" width="92.666666666666657" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Flips: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaK-S1-f3u">
+                                <rect key="frame" x="160.66666666666669" y="680" width="92.666666666666657" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" systemColor="systemPinkColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="F3t-Vo-NrJ">
-                                <rect key="frame" x="20" y="20" width="374" height="360"/>
+                                <rect key="frame" x="20" y="64" width="374" height="360"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="IRt-uI-t3q">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="84"/>
@@ -177,8 +237,24 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIu-EX-WVr">
+                                <rect key="frame" x="161" y="437" width="75" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <state key="normal" title="New Game"/>
+                                <connections>
+                                    <action selector="newGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HRB-Fl-lPI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cia-aE-kOf">
+                                <rect key="frame" x="143" y="642" width="129" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdX-IO-dLo">
-                                <rect key="frame" x="44" y="469" width="67" height="30"/>
+                                <rect key="frame" x="51" y="503" width="67" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <state key="normal" title="Animals"/>
@@ -187,7 +263,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ZV-K6-BP7">
-                                <rect key="frame" x="117" y="469" width="79" height="30"/>
+                                <rect key="frame" x="124" y="503" width="79" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <state key="normal" title="Halloween"/>
@@ -196,7 +272,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xu7-Na-btI">
-                                <rect key="frame" x="204" y="469" width="79" height="30"/>
+                                <rect key="frame" x="211" y="503" width="79" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <state key="normal" title="Sports"/>
@@ -205,7 +281,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPN-gz-Wfu">
-                                <rect key="frame" x="291" y="469" width="79" height="30"/>
+                                <rect key="frame" x="298" y="503" width="79" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <state key="normal" title="Nature"/>
@@ -214,7 +290,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0x4-re-mKO">
-                                <rect key="frame" x="78" y="507" width="57" height="30"/>
+                                <rect key="frame" x="85" y="541" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <state key="normal" title="Flags"/>
@@ -223,7 +299,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YlY-JY-hEO">
-                                <rect key="frame" x="244" y="507" width="57" height="30"/>
+                                <rect key="frame" x="251" y="541" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <state key="normal" title="Food"/>
@@ -232,7 +308,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujk-1H-Xuh">
-                                <rect key="frame" x="143" y="507" width="93" height="30"/>
+                                <rect key="frame" x="150" y="541" width="93" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <state key="normal" title="Electronics"/>
@@ -240,21 +316,6 @@
                                     <action selector="selecTheme:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eBD-Pt-Y7j"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIu-EX-WVr">
-                                <rect key="frame" x="161" y="437" width="75" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="New Game"/>
-                                <connections>
-                                    <action selector="newGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HRB-Fl-lPI"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cia-aE-kOf">
-                                <rect key="frame" x="134" y="638" width="129" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -263,11 +324,12 @@
                             <constraint firstItem="F3t-Vo-NrJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="YXb-Te-JqU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F3t-Vo-NrJ" secondAttribute="trailing" constant="20" id="bcT-oT-vVB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XaK-S1-f3u" secondAttribute="bottom" constant="20" id="d7O-hf-Doq"/>
-                            <constraint firstItem="XaK-S1-f3u" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dap-30-iqG"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="nLA-Ib-1h5"/>
                     <connections>
                         <outlet property="flipCountLabel" destination="XaK-S1-f3u" id="wJ1-cx-wNo"/>
+                        <outlet property="newGame" destination="mIu-EX-WVr" id="NBR-oj-FGr"/>
                         <outlet property="scoreLabel" destination="cia-aE-kOf" id="Oim-r3-8D4"/>
                         <outletCollection property="cardButtons" destination="dcN-W9-qdZ" collectionClass="NSMutableArray" id="hJG-Gq-ovj"/>
                         <outletCollection property="cardButtons" destination="mi2-F8-uZ4" collectionClass="NSMutableArray" id="Aji-Bo-LUF"/>
@@ -296,10 +358,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-852.17391304347836" y="14.673913043478262"/>
+            <point key="canvasLocation" x="55.072463768115945" y="14.673913043478262"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Iyx-ok-pCx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cCv-3w-i8Y" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tvU-Pk-YXM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GAH-yk-Wsw" kind="relationship" relationship="rootViewController" id="tUs-lS-vDf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tkh-AF-i0d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1594.2028985507247" y="14.673913043478262"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="3RV-Ia-nce"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

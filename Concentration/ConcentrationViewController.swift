@@ -8,11 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ConcentrationViewController: UIViewController {
     
     @IBAction func newGameButton(_ sender: Any) {
         initiateGame()
     }
+    
+    @IBOutlet weak var newGame: UIButton!
     
     private lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
     
@@ -28,7 +30,7 @@ class ViewController: UIViewController {
     
     private(set) var scoreCount: Int = 0 {
         didSet {
-            updateScoreLabel()
+//            updateScoreLabel()
         }
     }
     
@@ -41,14 +43,14 @@ class ViewController: UIViewController {
         flipCountLabel.attributedText = attribuitedString
     }
     
-    private func updateScoreLabel() {
-        let attributes: [NSAttributedString.Key: Any] = [
-            .strokeWidth: 5.0,
-            .strokeColor: #colorLiteral(red: 0.3176470697, green: 0.07450980693, blue: 0.02745098062, alpha: 1)
-        ]
-        let attribuitedString = NSAttributedString(string: "Score: \(scoreCount)", attributes: attributes)
-        scoreLabel.attributedText = attribuitedString
-    }
+//    private func updateScoreLabel() {
+//        let attriebutes: [NSAttributedString.Key: Any] = [
+//            .strokeWidth: 5.0,
+//            .strokeColor: #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
+//        ]
+//        let attribuitedString = NSAttributedString(string: "Score: \(scoreCount)", attributes: attributes)
+//        scoreLabel.attributedText = attribuitedString
+//    }
     
     @IBOutlet private weak var flipCountLabel: UILabel! {
         didSet {
@@ -58,7 +60,7 @@ class ViewController: UIViewController {
     
     @IBOutlet private weak var scoreLabel: UILabel! {
         didSet {
-            updateScoreLabel()
+//            updateScoreLabel()
         }
     }
     
@@ -72,22 +74,32 @@ class ViewController: UIViewController {
     }
     
     func updateViewFromTheModel() {
-        for index in cardButtons.indices{
-            let button = cardButtons[index]
-            let card = game.cards[index]
-            
-            if card.isFacedUp {
-                button.setTitle(emoji (for: card), for: UIControl.State.normal)
-                button.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        if cardButtons != nil{
+            for index in cardButtons.indices{
+                let button = cardButtons[index]
+                let card = game.cards[index]
                 
-                if card.isMatched {
-                    scoreCount+=1
+                if card.isFacedUp {
+                    button.setTitle(emoji (for: card), for: UIControl.State.normal)
+                    button.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                    
+                    if card.isMatched {
+                        scoreCount+=1
+                    }
+                    
+                } else {
+                    button.setTitle("", for: UIControl.State.normal)
+                    button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0) : #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
                 }
-                
-            } else {
-                button.setTitle("", for: UIControl.State.normal)
-                button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0) : #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
             }
+        }
+    }
+    
+    var theme: String? {
+        didSet {
+            defaultEmojis = theme ?? " "
+            emoji = [:]
+            updateViewFromTheModel()
         }
     }
     
@@ -99,17 +111,19 @@ class ViewController: UIViewController {
     var natureEmojis = "🌴🌸🍁☀️🌑🌈🌧️🌿"
     var sportsEmojis = "🏀⚽🏊🏾🎾🏉⚾🏄🏾‍♀️🚴🏾‍♀️"
     
-    lazy var themes = [animalsEmojis, halloweenEmojis, sportsEmojis, natureEmojis, flagEmojis, electronicEmojis, foodEmoji]
+//    lazy var themes = [animalsEmojis, halloweenEmojis, sportsEmojis, natureEmojis, flagEmojis, electronicEmojis, foodEmoji]
     
     private var defaultEmojis = "🕸️🕷️👻🎃☠️🧛🏽🦇🧙🏾"
-
+    private var emojiChoices = "❤️🧡🧡💛💚💙💜🖤"
+    
     @IBOutlet var themeButtons: [UIButton]!
     
     @IBAction func selecTheme(_ sender: UIButton) {
-        let theme = themeButtons.firstIndex(of: sender)!
-        game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
-        defaultEmojis = themes[theme]
-        updateViewFromTheModel()
+//        let theme = themeButtons.firstIndex(of: sender)!
+//        game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
+//        defaultEmojis = themes[theme]
+//        scoreCount = 0
+//        updateViewFromTheModel()
     }
     private var emoji = [Card:String]()
     
@@ -123,7 +137,8 @@ class ViewController: UIViewController {
     
     func initiateGame() {
         game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
-        defaultEmojis = halloweenEmojis
+//        defaultEmojis = halloweenEmojis
+        scoreCount = 0
         updateViewFromTheModel()
     }
     
